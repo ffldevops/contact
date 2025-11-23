@@ -29,6 +29,7 @@
             max-width: 500px;
             width: 100%;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
         }
 
         .profile-section {
@@ -155,6 +156,248 @@
             height: 20px;
         }
 
+        /* Styles pour le CV */
+        .cv-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .cv-container.active {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .cv-content {
+            background: white;
+            max-width: 900px;
+            width: 100%;
+            margin: 20px auto;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .close-btn {
+            position: sticky;
+            top: 20px;
+            right: 20px;
+            float: right;
+            background: #667eea;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            margin: 20px 20px 0 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-btn:hover {
+            background: #764ba2;
+        }
+
+        .cv-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            clear: both;
+        }
+
+        .cv-header h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .cv-header .cv-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .cv-header .cv-tagline {
+            font-size: 14px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .cv-contact-bar {
+            background: #2d3748;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            font-size: 14px;
+        }
+
+        .cv-contact-bar .item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cv-body {
+            padding: 40px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .cv-section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            font-weight: 600;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            font-size: 16px;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .skill-category p {
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding-left: 20px;
+            border-left: 2px solid #e2e8f0;
+        }
+
+        .experience-item:hover {
+            border-left-color: #667eea;
+        }
+
+        .experience-title {
+            font-size: 18px;
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .experience-meta {
+            font-size: 14px;
+            color: #718096;
+            margin-bottom: 10px;
+        }
+
+        .experience-meta .company {
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .experience-description {
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        .formation-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 6px;
+        }
+
+        .formation-title {
+            font-size: 16px;
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .formation-meta {
+            font-size: 14px;
+            color: #718096;
+        }
+
+        .languages {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .language-item {
+            background: #f7fafc;
+            padding: 15px 25px;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .language-name {
+            font-size: 16px;
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .language-level {
+            font-size: 14px;
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .cv-contact-bar {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+            
+            .cv-body {
+                padding: 20px;
+            }
+            
+            .cv-header {
+                padding: 30px 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 480px) {
             .card {
                 padding: 30px 20px;
@@ -171,8 +414,8 @@
         <div class="profile-section">
             <div class="avatar">FFL</div>
             <h1>Franck FLEUREAU</h1>
-            <div class="title">Chef de projet senior
-            <div class="company">Télécoms & IT</div>
+            <div class="title">Chef de Projet Senior Télécom & IT</div>
+            <div class="company">20+ ans d'expérience</div>
         </div>
 
         <div class="contact-info">
@@ -205,11 +448,19 @@
         </div>
 
         <div class="actions">
-            <a href="moncv.pdf" download class="btn btn-primary">
+            <button onclick="showCV()" class="btn btn-primary">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                </svg>
+                Visualisez mon CV
+            </button>
+
+            <a href="moncv.pdf" download class="btn btn-secondary">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                 </svg>
-                Télécharger mon CV
+                Télécharger mon CV (PDF)
             </a>
 
             <button onclick="downloadVCard()" class="btn btn-secondary">
@@ -221,23 +472,187 @@
         </div>
     </div>
 
+    <!-- CV Modal -->
+    <div id="cvContainer" class="cv-container">
+        <div class="cv-content">
+            <button onclick="closeCV()" class="close-btn">×</button>
+            
+            <div class="cv-header">
+                <h2>Franck FLEUREAU</h2>
+                <div class="cv-title">CHEF DE PROJET Senior – Télécom & IT</div>
+                <div class="cv-tagline">20+ ans d'expérience Télécom | Spécialisé en pilotage de projets réseaux mobiles | Compétences Agile & DevOps</div>
+            </div>
+
+            <div class="cv-contact-bar">
+                <div class="item">
+                    <span>📍</span> 94270 Le Kremlin Bicêtre
+                </div>
+                <div class="item">
+                    <span>📞</span> 06 11 04 04 68
+                </div>
+                <div class="item">
+                    <span>✉️</span> franck.fleureau@gmail.com
+                </div>
+            </div>
+
+            <div class="cv-body">
+                <div class="cv-section">
+                    <h3 class="section-title">Compétences</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Méthodologies & Certifications</h3>
+                            <p>Scrum Agile, Product Owner, Cycle en V, AMOA<br>
+                            <strong>Certifications :</strong> Prince2, ITIL 4, PSPO-1, CCNA</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Outils de Gestion</h3>
+                            <p>Jira, Confluence, MS Project, Trello, Miro, Bizagi, Figma, Canva</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>DevOps & Technique</h3>
+                            <p>Docker, Kubernetes, GitLab, AWS, Terraform, Python, Bash, SQL</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Management</h3>
+                            <p>Pilotage d'équipes MOE, suivi financier, conduite du changement</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-section">
+                    <h3 class="section-title">Expériences Professionnelles</h3>
+                    
+                    <div class="experience-item">
+                        <div class="experience-title">Chef de Projet Déploiement Sites Radio</div>
+                        <div class="experience-meta">
+                            <span class="company">SFR & BOUYGUES TELECOM</span> | 2019-2024
+                        </div>
+                        <div class="experience-description">
+                            Pilotage de portefeuilles multi-sites (New Deal Mobile, évolution sites existants, sites neufs). Coordination MOE, cadrage technique et financier.<br>
+                            <strong>Résultats :</strong> Réduction significative des Zones Blanches et expansion Zones 5G.
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-title">Ingénieur Support Réseau</div>
+                        <div class="experience-meta">
+                            <span class="company">SFR</span> | 2017-2019
+                        </div>
+                        <div class="experience-description">
+                            AMOA pour MCO et déploiement réseau radio. Réduction des alarmes réseau et amélioration de la disponibilité.
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-title">Ingénieur Télécom</div>
+                        <div class="experience-meta">
+                            <span class="company">NOKIA</span> | 1997-2012
+                        </div>
+                        <div class="experience-description">
+                            Interface technique entre lignes de produits NOKIA et opérateurs mobiles (France & International). Déploiement et MCO réseaux 2G/3G/4G. Troubleshooting, analyse KPIs, amélioration QoS. Gestion de crise. Management d'équipes techniques.
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-title">Consultant Efficacité Énergétique</div>
+                        <div class="experience-meta">
+                            <span class="company">BHC ENERGY & GESCOCLIM</span> | 2013-2017
+                        </div>
+                        <div class="experience-description">
+                            Audits énergétiques réglementaires, études thermiques, développement pompe à chaleur connectée.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-section">
+                    <h3 class="section-title">Formation</h3>
+                    
+                    <div class="formation-item">
+                        <div class="formation-title">Chef de Projet Scrum Agile</div>
+                        <div class="formation-meta">G2R | 2025</div>
+                    </div>
+
+                    <div class="formation-item">
+                        <div class="formation-title">Bootcamp DevOps</div>
+                        <div class="formation-meta">Datascientest | 2024</div>
+                    </div>
+
+                    <div class="formation-item">
+                        <div class="formation-title">Cybersécurité</div>
+                        <div class="formation-meta">ANSSI SecNumacadémie, SensCyber | 2024</div>
+                    </div>
+
+                    <div class="formation-item">
+                        <div class="formation-title">Mastère Spécialisé Construction Durable</div>
+                        <div class="formation-meta">ESTP Paris | 2014</div>
+                    </div>
+
+                    <div class="formation-item">
+                        <div class="formation-title">Licence Pro Énergétique</div>
+                        <div class="formation-meta">CNAM | 2013</div>
+                    </div>
+
+                    <div class="formation-item">
+                        <div class="formation-title">Diplôme d'Ingénieur</div>
+                        <div class="formation-meta">ENSEA | 1996</div>
+                    </div>
+                </div>
+
+                <div class="cv-section">
+                    <h3 class="section-title">Langues</h3>
+                    <div class="languages">
+                        <div class="language-item">
+                            <div class="language-name">Anglais</div>
+                            <div class="language-level">Niveau C2 (BULATS 2014)</div>
+                            <div class="formation-meta">Expérience internationale significative</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
+        function showCV() {
+            document.getElementById('cvContainer').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCV() {
+            document.getElementById('cvContainer').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fermer le CV en cliquant en dehors
+        document.getElementById('cvContainer').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCV();
+            }
+        });
+
+        // Fermer le CV avec la touche Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeCV();
+            }
+        });
+
         function downloadVCard() {
             const vcard = `BEGIN:VCARD
 VERSION:3.0
-FN:Franck FLEUREAU
-TEL;TYPE=CELL:+33611040468
-EMAIL:franck.fleureau@gmail.com
-// TITLE:Titre du Poste
-// ORG:Nom de l'Entreprise
-// URL:linkedin.com/in/prenom-nom
+FN:Prénom NOM
+TEL;TYPE=CELL:+33XXXXXXXXX
+EMAIL:xxxxxxx@gmail.com
+TITLE:Chef de Projet Senior Télécom & IT
+ORG:
+URL:linkedin.com/in/prenom-nom
 END:VCARD`;
 
             const blob = new Blob([vcard], { type: 'text/vcard' });
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
-            link.download = 'contact-franck-fleureau.vcf';
+            link.download = 'contact-prenom-nom.vcf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
