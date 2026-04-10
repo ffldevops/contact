@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV – Franck Fleureau</title>
+
+    <style>
+        /* 🎨 PALETTE PRODUCT OWNER CORPORATE – MODE CLAIR */
+        :root {
+            --bg1: #f3f4f6;      /* gris clair tech */
+            --bg2: #1f2937;      /* bleu corporate */
+            --text: #1e293b;     /* bleu nuit lisible */
+            --card-bg: rgba(255, 255, 255, 0.55);
+            --card-border: rgba(0, 0, 0, 0.08);
+            --accent: #5a2ea6;   /* violet pro */
+        }
+
+        /* 🌙 MODE SOMBRE AUTOMATIQUE */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg1: #0f172a;      /* bleu nuit */
+                --bg2: #1e293b;      /* bleu profond */
+                --text: #f1f5f9;     /* gris clair lisible */
+                --card-bg: rgba(255, 255, 255, 0.08);
+                --card-border: rgba(255, 255, 255, 0.15);
+                --accent: #8b5cf6;   /* violet tech sombre */
+            }
+        }
+
+        /* 🌗 FOND GRADIENT AUTO */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, var(--bg1), var(--bg2));
+            color: var(--text);
+            padding: 20px;
+        }
+
+        /* 🟦 CONTENEUR */
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* 🟦 TITRES */
+        header {
+            text-align: center;
+            padding: 30px 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        header h2 {
+            margin-top: 8px;
+            font-size: 18px;
+            opacity: 0.8;
+        }
+
+        /* 🟦 BLOCS GLASSMORPHISM PRO */
+        .section {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border-radius: 14px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border: 1px solid var(--card-border);
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 18px 20px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+            border-bottom: 1px solid var(--card-border);
+            color: var(--accent);
+        }
+
+        .section-header:hover {
+            background: rgba(0,0,0,0.05);
+        }
+
+        .section-content {
+            display: none;
+            padding: 25px;
+            line-height: 1.7;
+        }
+
+        /* 🟦 LISTES */
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        /* 🟦 SOUS-BLOCS EXPÉRIENCES */
+        .sub-toggle {
+            margin-top: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            padding: 6px 0;
+            color: var(--accent);
+        }
+
+        .sub-content {
+            display: none;
+            margin-top: 10px;
+            padding: 15px 20px;
+            border-left: 3px solid var(--accent);
+            background: rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+
+        /* 🟦 BOUTON TOUT OUVRIR */
+        .toggle-all {
+            display: block;
+            width: 220px;
+            margin: 20px auto 40px auto;
+            text-align: center;
+            padding: 12px;
+            border-radius: 10px;
+            background: var(--accent);
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .toggle-all:hover {
+            opacity: 0.85;
+        }
+
+        /* 🟦 BOUTON RETOUR */
+        .back {
+            display: block;
+            width: 200px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 12px;
+            border-radius: 10px;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back:hover {
+            opacity: 0.85;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Franck Fleureau</h1>
+        <h2>Product Owner – Produits Digitaux & Techniques</h2>
+    </header>
+
+    <div class="toggle-all" id="toggleAll">Tout ouvrir</div>
+
+    <!-- PROFIL -->
+    <div class="section">
+        <div class="section-header">Profil</div>
+        <div class="section-content">
+            <p>
+                Product Owner certifié PSPO‑I, avec plus de 25 ans d’expérience dans des environnements techniques complexes.
+                Spécialisé dans la gestion de produits à forte contrainte, la priorisation de la valeur et la coordination entre métiers et équipes techniques.
+            </p>
+        </div>
+    </div>
+
+    <!-- ATOUTS -->
+    <div class="section">
+        <div class="section-header">Atouts</div>
+        <div class="section-content">
+            <ul>
+                <li>Communication & pédagogie : rendre simple ce qui est complexe</li>
+                <li>Leadership collaboratif : fédérer, aligner, faciliter la coopération</li>
+                <li>Certification PSPO‑I, ITIL 4, Prince 2</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- COMPÉTENCES -->
+    <div class="section">
+        <div class="section-header">Compétences</div>
+        <div class="section-content">
+            <ul>
+                <li>Vision produit, roadmap, gestion du Product Backlog</li>
+                <li>Conduite du changement, communication produit</li>
+                <li>Travail transverse : techniques, métiers, UX, QA</li>
+                <li>Analyse du besoin, cadrage fonctionnel, AMOA/MOE</li>
+                <li>Priorisation (MoSCoW, Business Value), arbitrages</li>
+                <li>Feedback loops, itérations courtes, amélioration continue</li>
+                <li>Scrum, Kanban, facilitation des cérémonies</li>
+                <li>User Stories, critères d’acceptation, DoR/DoD</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- INFORMATIQUE -->
+    <div class="section">
+        <div class="section-header">Informatique</div>
+        <div class="section-content">
+            <ul>
+                <li>IoT, systèmes distribués</li>
+                <li>API REST</li>
+                <li>Gitlab CI/CD</li>
+                <li>Docker, Kubernetes, Terraform</li>
+                <li>AWS</li>
+                <li>Python, SQL</li>
+                <li>Jira, Confluence, MS Project</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- LANGUES -->
+    <div class="section">
+        <div class="section-header">Langues</div>
+        <div class="section-content">
+            <ul>
+                <li>Français : natif</li>
+                <li>Anglais : courant (C2)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- EXPÉRIENCES -->
+    <div class="section">
+        <div class="section-header">Expériences professionnelles</div>
+        <div class="section-content">
+
+            <p><strong>Product Owner – Produits Techniques & Infrastructures (2019–2024)</strong><br>SFR & Bouygues Telecom</p>
+            <div class="sub-toggle">Voir détails ▼</div>
+            <div class="sub-content">
+                <ul>
+                    <li>Définition de la vision produit et pilotage du backlog</li>
+                    <li>Recueil du besoin métier, rédaction des US, critères d’acceptation</li>
+                    <li>Coordination transverse MOA/MOE, arbitrages, gestion des dépendances</li>
+                    <li>Réduction du time‑to‑market de 22%</li>
+                    <li>Suivi KPI, reporting direction, pilotage qualité</li>
+                </ul>
+            </div>
+
+            <p><strong>Product Owner – Outils d’Exploitation & MCO (2017–2019)</strong><br>SFR</p>
+            <div class="sub-toggle">Voir détails ▼</div>
+            <div class="sub-content">
+                <ul>
+                    <li>Pilotage AMOA pour les outils d’exploitation réseau</li>
+                    <li>Analyse RCA & évolutions produit : -30% d’alarmes critiques</li>
+                    <li>Tests, validation, accompagnement au déploiement</li>
+                </ul>
+            </div>
+
+            <p><strong>Consultant Efficacité Énergétique & IoT (2013–2016)</strong><br>BHC Energy & GESCOCLIM</p>
+            <div class="sub-toggle">Voir détails ▼</div>
+            <div class="sub-content">
+                <ul>
+                    <li>Audits réglementaires</li>
+                    <li>Solutions IoT & cadrage fonctionnel</li>
+                    <li>Coordination MOA multisite</li>
+                </ul>
+            </div>
+
+            <p><strong>Expert Systèmes & Interface Client (1997–2012)</strong><br>Nokia Networks</p>
+            <div class="sub-toggle">Voir détails ▼</div>
+            <div class="sub-content">
+                <ul>
+                    <li>Interface entre clients et équipes techniques globales</li>
+                    <li>Définition des besoins, validation fonctionnelle</li>
+                    <li>Pilotage de projets techniques complexes</li>
+                    <li>Gestion de crises & optimisation continue</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FORMATIONS -->
+    <div class="section">
+        <div class="section-header">Diplômes & Formations</div>
+        <div class="section-content">
+            <ul>
+                <li>Chef de projet Scrum agile – 2025</li>
+                <li>Bootcamp DevOps – 2024</li>
+                <li>MS Construction & Habitat Durables – ESTP – 2014</li>
+                <li>Ingénieur ENSEA – 1996</li>
+            </ul>
+        </div>
+    </div>
+
+    <a class="back" href="index.html">⬅ Retour</a>
+
+</div>
+
+<script>
+    const sections = document.querySelectorAll('.section-content');
+    const headers = document.querySelectorAll('.section-header');
+    const toggleAllBtn = document.getElementById('toggleAll');
+    let allOpen = false;
+
+    headers.forEach(header => {
+        header.addEventListener('click', () => {
+            const content = header.nextElementSibling;
+            if (!content) return;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+
+    document.querySelectorAll('.sub-toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const sub = toggle.nextElementSibling;
+            if (!sub) return;
+            const open = sub.style.display === 'block';
+            sub.style.display = open ? 'none' : 'block';
+            toggle.textContent = open ? 'Voir détails ▼' : 'Réduire ▲';
+        });
+    });
+
+    if (toggleAllBtn) {
+        toggleAllBtn.addEventListener('click', () => {
+            allOpen = !allOpen;
+            sections.forEach(s => s.style.display = allOpen ? 'block' : 'none');
+            toggleAllBtn.textContent = allOpen ? 'Tout fermer' : 'Tout ouvrir';
+        });
+    }
+</script>
+
+</body>
+</html>
