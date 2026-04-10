@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Fleureau;Franck;;;
+FN:Franck Fleureau
+TITLE:Product Owner – Produits Digitaux & Techniques
+EMAIL;TYPE=INTERNET,WORK:franck.fleureau@gmail.com
+TEL;TYPE=CELL:+33611040468
+ADR;TYPE=HOME:;;Le Kremlin-Bicêtre;;;;
+NOTE:25+ ans d'expérience Télécom & IT – Product Owner certifié PSPO-I
+END:VCARD
